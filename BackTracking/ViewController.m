@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Applications/Contacts.app"]) {
+        NSLog(@"越狱手机...");
+    }else{
+        NSLog(@"非越狱手机...");
+    }
+    
+
 }
 
 
