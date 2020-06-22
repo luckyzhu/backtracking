@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44FFE083249904A5005D9C37 /* tiankongzhicheng.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */; };
+		44FFE0872499EDD2005D9C37 /* BTThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE0862499EDD2005D9C37 /* BTThread.m */; };
+		44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE089249F8377005D9C37 /* SRWebSocket.m */; };
+		44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE08D249F83C4005D9C37 /* WebSocketManager.m */; };
+		44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */; };
 		6C8D6B6B51E22BC9846672AD /* libPods-BackTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E44EC6966CD8D3E7A611FB6B /* libPods-BackTracking.a */; };
 		8519F42F249358CC00528571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F42E249358CC00528571 /* AppDelegate.m */; };
 		8519F432249358CC00528571 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F431249358CC00528571 /* SceneDelegate.m */; };
@@ -19,6 +24,16 @@
 
 /* Begin PBXFileReference section */
 		10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.release.xcconfig"; path = "Target Support Files/Pods-BackTracking/Pods-BackTracking.release.xcconfig"; sourceTree = "<group>"; };
+		44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tiankongzhicheng.mp3; sourceTree = "<group>"; };
+		44FFE0852499EDD2005D9C37 /* BTThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTThread.h; sourceTree = "<group>"; };
+		44FFE0862499EDD2005D9C37 /* BTThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTThread.m; sourceTree = "<group>"; };
+		44FFE089249F8377005D9C37 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		44FFE08A249F8377005D9C37 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		44FFE08C249F8393005D9C37 /* SocketRocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketRocket.h; sourceTree = "<group>"; };
+		44FFE08D249F83C4005D9C37 /* WebSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
+		44FFE08E249F83C4005D9C37 /* WebSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
+		44FFE090249F83DF005D9C37 /* BTWebSocketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTWebSocketViewController.h; sourceTree = "<group>"; };
+		44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTWebSocketViewController.m; sourceTree = "<group>"; };
 		6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.debug.xcconfig"; path = "Target Support Files/Pods-BackTracking/Pods-BackTracking.debug.xcconfig"; sourceTree = "<group>"; };
 		8519F42A249358CC00528571 /* BackTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8519F42D249358CC00528571 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +62,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44FFE0812499047E005D9C37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44FFE084249904BD005D9C37 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				44FFE0852499EDD2005D9C37 /* BTThread.h */,
+				44FFE0862499EDD2005D9C37 /* BTThread.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		44FFE088249F836A005D9C37 /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				44FFE08E249F83C4005D9C37 /* WebSocketManager.h */,
+				44FFE08D249F83C4005D9C37 /* WebSocketManager.m */,
+				44FFE08C249F8393005D9C37 /* SocketRocket.h */,
+				44FFE08A249F8377005D9C37 /* SRWebSocket.h */,
+				44FFE089249F8377005D9C37 /* SRWebSocket.m */,
+				44FFE090249F83DF005D9C37 /* BTWebSocketViewController.h */,
+				44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */,
+			);
+			path = WebSocket;
+			sourceTree = "<group>";
+		};
 		8519F421249358CC00528571 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +114,9 @@
 		8519F42C249358CC00528571 /* BackTracking */ = {
 			isa = PBXGroup;
 			children = (
+				44FFE088249F836A005D9C37 /* WebSocket */,
+				44FFE084249904BD005D9C37 /* Test */,
+				44FFE0812499047E005D9C37 /* Resources */,
 				8519F42D249358CC00528571 /* AppDelegate.h */,
 				8519F42E249358CC00528571 /* AppDelegate.m */,
 				8519F430249358CC00528571 /* SceneDelegate.h */,
@@ -89,7 +138,6 @@
 				6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */,
 				10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -160,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8519F43D249358D100528571 /* LaunchScreen.storyboard in Resources */,
+				44FFE083249904A5005D9C37 /* tiankongzhicheng.mp3 in Resources */,
 				8519F43A249358D100528571 /* Assets.xcassets in Resources */,
 				8519F438249358CC00528571 /* Main.storyboard in Resources */,
 			);
@@ -197,8 +246,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */,
+				44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */,
+				44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */,
 				8519F435249358CC00528571 /* ViewController.m in Sources */,
 				8519F42F249358CC00528571 /* AppDelegate.m in Sources */,
+				44FFE0872499EDD2005D9C37 /* BTThread.m in Sources */,
 				8519F440249358D100528571 /* main.m in Sources */,
 				8519F432249358CC00528571 /* SceneDelegate.m in Sources */,
 			);

@@ -4,14 +4,14 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-BackTracking.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>SocketRocket.xcscheme</key>
+		<key>Pods-BackTracking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
