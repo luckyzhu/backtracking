@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "BTThread.h"
-
+#import <objc/message.h>
+#import <UIKit/UIKit.h>
+#import "nextViewController.h"
 
 typedef struct {
     BOOL fin;
@@ -18,51 +19,90 @@ typedef struct {
     NSArray *array;
 } frame_header;
 
-@interface ViewController ()<NSStreamDelegate>
-
+@interface ViewController ()<NSStreamDelegate,UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)     NSMutableData *data;
 @property(nonatomic,strong)    NSOutputStream *outPutSteam;
 @property(nonatomic,strong)     NSInputStream *inPutSteam;
 @property(nonatomic,strong)    dispatch_group_t waitGroup;
 @property(nonatomic,assign)    int  num;
 @property(nonatomic,copy)    NSString *str;
+@property(nonatomic) long long isVip;
 @end
 
 @implementation ViewController
 @synthesize str = _testStr;
 
-//- (void)setStr:(NSString *)str {
-//
-//    _testStr = str;
-//
-//}
-//
-//-(NSString *)str {
-//
-//    return @"哈哈哈哈";
-//}
-
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.waitGroup = dispatch_group_create();
-        
-//    //线程
-//    BTThread *thread = [[BTThread alloc]initWithTarget:self selector:@selector(todoSth) object:nil];
-////    [thread start];
 
-    NSString *key = @"HTTP/1.1 101 Switching Protocols";
-    NSData *data =[key dataUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"%s %s", [key UTF8String], data.bytes);
- 
-    frame_header header = {1,99,'acb',@"字符",@[@"1",@"2",@"3"]};
+    UITableView *tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64)];
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    [self.view addSubview:tableview];
     
-    [self _handleFrameHeader:header];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [button setTitle:@"按钮一" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.view addSubview:button];
 }
+
+- (void)buttonDidClick {
+    
+    nextViewController *nextVc = [[nextViewController alloc]init];
+    [self.navigationController pushViewController:nextVc animated:YES];
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 2;
+}
+
+- (void)switchClick:(UISwitch *)sw {
+    
+    [[NSUserDefaults standardUserDefaults] setBool:sw.isOn forKey:@"bt_auto_key"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellId = @"tweak_chat_id";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.backgroundColor = [UIColor whiteColor];
+    }
+    
+    NSInteger sectionCount = [self numberOfSectionsInTableView:tableView];
+    if (indexPath.section == sectionCount-1) {
+        if (indexPath.row == 0) {
+            cell.textLabel.text = @"tweak微信01";
+            UISwitch *swit = [[UISwitch alloc]init];
+            [swit addTarget:self action:@selector(switchClick:) forControlEvents:UIControlEventValueChanged];
+            swit.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"bt_auto_key"];
+            cell.accessoryView = swit;
+        }else{
+            cell.textLabel.text = @"tweak微信02";
+        }
+    cell.imageView.image = [UIImage imageWithContentsOfFile:@"/123.png"];
+        return cell;
+    }
+    
+    return cell;
+    
+}
+
+
 
 - (void)todoSth {
     dispatch_group_enter(self.waitGroup);

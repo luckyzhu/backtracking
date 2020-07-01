@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441178E424A10C31003FD7B2 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 441178E324A10C31003FD7B2 /* 123.png */; };
+		44AEFF8B24AC2494005A7E58 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEFF8A24AC2494005A7E58 /* Student.m */; };
+		44AEFF8E24AC2734005A7E58 /* nextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEFF8D24AC2734005A7E58 /* nextViewController.m */; };
+		44AEFF9524AC87F9005A7E58 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEFF9424AC87F9005A7E58 /* NSObject+KVO.m */; };
 		44FFE083249904A5005D9C37 /* tiankongzhicheng.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */; };
-		44FFE0872499EDD2005D9C37 /* BTThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE0862499EDD2005D9C37 /* BTThread.m */; };
 		44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE089249F8377005D9C37 /* SRWebSocket.m */; };
 		44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE08D249F83C4005D9C37 /* WebSocketManager.m */; };
 		44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */; };
@@ -24,9 +27,14 @@
 
 /* Begin PBXFileReference section */
 		10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.release.xcconfig"; path = "Target Support Files/Pods-BackTracking/Pods-BackTracking.release.xcconfig"; sourceTree = "<group>"; };
+		441178E324A10C31003FD7B2 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
+		44AEFF8924AC2494005A7E58 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		44AEFF8A24AC2494005A7E58 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		44AEFF8C24AC2734005A7E58 /* nextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nextViewController.h; sourceTree = "<group>"; };
+		44AEFF8D24AC2734005A7E58 /* nextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nextViewController.m; sourceTree = "<group>"; };
+		44AEFF9324AC87F9005A7E58 /* NSObject+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
+		44AEFF9424AC87F9005A7E58 /* NSObject+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
 		44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tiankongzhicheng.mp3; sourceTree = "<group>"; };
-		44FFE0852499EDD2005D9C37 /* BTThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTThread.h; sourceTree = "<group>"; };
-		44FFE0862499EDD2005D9C37 /* BTThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTThread.m; sourceTree = "<group>"; };
 		44FFE089249F8377005D9C37 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		44FFE08A249F8377005D9C37 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
 		44FFE08C249F8393005D9C37 /* SocketRocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketRocket.h; sourceTree = "<group>"; };
@@ -62,9 +70,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44AEFF8F24AC3081005A7E58 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				44AEFF9324AC87F9005A7E58 /* NSObject+KVO.h */,
+				44AEFF9424AC87F9005A7E58 /* NSObject+KVO.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 		44FFE0812499047E005D9C37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				441178E324A10C31003FD7B2 /* 123.png */,
 				44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */,
 			);
 			path = Resources;
@@ -73,8 +91,10 @@
 		44FFE084249904BD005D9C37 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				44FFE0852499EDD2005D9C37 /* BTThread.h */,
-				44FFE0862499EDD2005D9C37 /* BTThread.m */,
+				44AEFF8924AC2494005A7E58 /* Student.h */,
+				44AEFF8A24AC2494005A7E58 /* Student.m */,
+				44AEFF8C24AC2734005A7E58 /* nextViewController.h */,
+				44AEFF8D24AC2734005A7E58 /* nextViewController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -114,6 +134,7 @@
 		8519F42C249358CC00528571 /* BackTracking */ = {
 			isa = PBXGroup;
 			children = (
+				44AEFF8F24AC3081005A7E58 /* KVO */,
 				44FFE088249F836A005D9C37 /* WebSocket */,
 				44FFE084249904BD005D9C37 /* Test */,
 				44FFE0812499047E005D9C37 /* Resources */,
@@ -211,6 +232,7 @@
 				44FFE083249904A5005D9C37 /* tiankongzhicheng.mp3 in Resources */,
 				8519F43A249358D100528571 /* Assets.xcassets in Resources */,
 				8519F438249358CC00528571 /* Main.storyboard in Resources */,
+				441178E424A10C31003FD7B2 /* 123.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,10 +270,12 @@
 			files = (
 				44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */,
 				44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */,
+				44AEFF9524AC87F9005A7E58 /* NSObject+KVO.m in Sources */,
 				44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */,
+				44AEFF8E24AC2734005A7E58 /* nextViewController.m in Sources */,
+				44AEFF8B24AC2494005A7E58 /* Student.m in Sources */,
 				8519F435249358CC00528571 /* ViewController.m in Sources */,
 				8519F42F249358CC00528571 /* AppDelegate.m in Sources */,
-				44FFE0872499EDD2005D9C37 /* BTThread.m in Sources */,
 				8519F440249358D100528571 /* main.m in Sources */,
 				8519F432249358CC00528571 /* SceneDelegate.m in Sources */,
 			);

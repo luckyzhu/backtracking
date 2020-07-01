@@ -356,7 +356,7 @@ static __strong NSData *CRLFCRLF;
     _readyState = SR_CONNECTING;  //Socket状态
     _consumerStopped = YES;
     
-    //协议规定：请求头必须包含Sec-WebSocket-Version 且值为13
+    //客户端选择的版本13
     _webSocketVersion = 13;
   
     //初始化工作的队列,串行
@@ -534,6 +534,9 @@ Sec-WebSocket-Key和Sec-WebSocket-Accept这一对值，前者是我们客户端�
         return;
     }
 
+    /*
+     如果客户端收到的Sec-WebSocket-Acceptheader字段或者Sec-WebSocket-Acceptheader字段不等于通过Sec-WebSocket-Key字段的值（作为一个字符串，而不是base64解码后）和"258EAFA5-E914-47DA-95CA-C5AB0DC85B11"串联起来，忽略所有前后空格进行base64 SHA-1编码的值，那么客户端必须关闭连接。
+     */
     if(![self _checkHandshake:_receivedHTTPHeaders]) {
         [self _failWithError:[NSError errorWithDomain:SRWebSocketErrorDomain code:2133 userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"Invalid Sec-WebSocket-Accept response"] forKey:NSLocalizedDescriptionKey]]];
         return;
@@ -560,7 +563,7 @@ Sec-WebSocket-Key和Sec-WebSocket-Accept这一对值，前者是我们客户端�
 
     [self _performDelegateBlock:^{
         if ([self.delegate respondsToSelector:@selector(webSocketDidOpen:)]) {
-            [self.delegate webSocketDidOpen:self];
+            [self.delegate webSocketDidOpen:self]; //告知代理websocket连接成功
         };
     }];
 }
@@ -572,8 +575,9 @@ Sec-WebSocket-Key和Sec-WebSocket-Accept这一对值，前者是我们客户端�
         _receivedHTTPHeaders = CFHTTPMessageCreateEmpty(NULL, NO);
     }
     
-    //不停的add consumer去读数据
+    
     [self _readUntilHeaderCompleteWithCallback:^(SRWebSocket *self,  NSData *data) {
+        //data就是服务端返回的握手数据
         //拼接数据，拼到头部
         CFHTTPMessageAppendBytes(_receivedHTTPHeaders, (const UInt8 *)data.bytes, data.length);
         
@@ -798,7 +802,7 @@ Sec-WebSocket-Key和Sec-WebSocket-Accept这一对值，前者是我们客户端�
     [self _updateSecureStreamOptions];
     
     if (!_scheduledRunloops.count) {
-        //SR_networkRunLoop会创建一个带runloop的常驻子线程，模式为NSDefaultRunLoopMode。
+        //SR_networkRunLoop会开启一个带runloop的常驻子线程
         [self scheduleInRunLoop:[NSRunLoop SR_networkRunLoop] forMode:NSDefaultRunLoopMode];
     }
     
@@ -829,11 +833,17 @@ Sec-WebSocket-Key和Sec-WebSocket-Accept这一对值，前者是我们客户端�
     [_scheduledRunloops removeObject:@[aRunLoop, mode]];
 }
 
+/*
+ 关闭帧可能包含内容（body）（帧的“应用数据”部分）来表明连接关闭的原因，例如终端的断开，或者是终端收到了一个太大的帧，或者是终端收到了一个不符合预期的格式的内容。如果这个内容存在，内容的前两个字节必须是一个无符号整型（按照网络字节序）来代表在7.4节中定义的状态码。
+ */
 - (void)close;
 {
     [self closeWithCode:SRStatusCodeNormal reason:nil];
 }
 
+/*
+ 
+ */
 - (void)closeWithCode:(NSInteger)code reason:(NSString *)reason;
 {
     assert(code);
@@ -856,7 +866,11 @@ Sec-WebSocket-Key和Sec-WebSocket-Accept这一对值，前者是我们客户端�
         size_t maxMsgSize = [reason maximumLengthOfBytesUsingEncoding:NSUTF8StringEncoding];
         NSMutableData *mutablePayload = [[NSMutableData alloc] initWithLength:sizeof(uint16_t) + maxMsgSize];
         NSData *payload = mutablePayload;
-        // EndianU16_BtoN作用 举例:1000 转成 03e8 = 0000 0011 1110 1000
+        
+        //1000 转成十六进制是03e8
+        //EndianU16_BtoN(1000) 转成十六进制是 e803
+        // EndianU16_BtoN作用：高字节和低字节进行交换
+        // websocket协议：内容的前两个字节必须是一个无符号整型（按照网络字节序）来代表在7.4节中定义的状态码。
         ((uint16_t *)mutablePayload.mutableBytes)[0] = EndianU16_BtoN(code);
         
         if (reason) {
@@ -1277,7 +1291,7 @@ static const uint8_t SRPayloadLenMask   = 0x7F; // 0111 1111
         }
 
         //extra_bytes_needed就是Extended payload length
-        if (extra_bytes_needed == 0) {//Extended payload length为0,直接进入后续读取操作;
+        if (extra_bytes_needed == 0) {
             [self _handleFrameHeader:header curData:self->_currentFrameData];
         } else {
             //Extended payload length不为0,添加消费者,改变读取数据的偏移,移动到Payload数据起始的位置;
@@ -1289,12 +1303,12 @@ static const uint8_t SRPayloadLenMask   = 0x7F; // 0111 1111
                 
                 if (header.payload_length == 126) {
                     assert(mapped_size >= sizeof(uint16_t));
-                    uint16_t newLen = EndianU16_BtoN(*(uint16_t *)(mapped_buffer));
+                    uint16_t newLen = EndianU16_BtoN(*(uint16_t *)(mapped_buffer));//多字节长度量以网络字节顺序表示,大端模式
                     header.payload_length = newLen;
                     offset += sizeof(uint16_t);
                 } else if (header.payload_length == 127) {
                     assert(mapped_size >= sizeof(uint64_t));
-                    header.payload_length = EndianU64_BtoN(*(uint64_t *)(mapped_buffer));
+                    header.payload_length = EndianU64_BtoN(*(uint64_t *)(mapped_buffer));//多字节长度量以网络字节顺序表示
                     offset += sizeof(uint64_t);
                 } else {
                     assert(header.payload_length < 126 && header.payload_length >= 0);
@@ -1533,19 +1547,19 @@ static const char CRLFCRLFBytes[] = {'\r', '\n', '\r', '\n'};
         return didWork;
     }
     
-    size_t curSize = _readBuffer.length - _readBufferOffset;
+    size_t curSize = _readBuffer.length - _readBufferOffset;//当前buffer剩余未读的数据大小
     if (!curSize) {
         return didWork;
     }
     
-    SRIOConsumer *consumer = [_consumers objectAtIndex:0];
+    SRIOConsumer *consumer = [_consumers objectAtIndex:0];//从消费池中取出第一个待消费者进行消费
     
     size_t bytesNeeded = consumer.bytesNeeded;
     
     size_t foundSize = 0;
     if (consumer.consumer) {
         NSData *tempView = [NSData dataWithBytesNoCopy:(char *)_readBuffer.bytes + _readBufferOffset length:_readBuffer.length - _readBufferOffset freeWhenDone:NO];  
-        foundSize = consumer.consumer(tempView); //读取的一定是完整的数据帧，返回数据帧的大小
+        foundSize = consumer.consumer(tempView);//得到完整的握手响应数据大小
     } else {
         assert(consumer.bytesNeeded);
         if (curSize >= bytesNeeded) {
@@ -1558,10 +1572,11 @@ static const char CRLFCRLFBytes[] = {'\r', '\n', '\r', '\n'};
     NSData *slice = nil;
     if (consumer.readToCurrentFrame || foundSize) {
         NSRange sliceRange = NSMakeRange(_readBufferOffset, foundSize);
-        slice = [_readBuffer subdataWithRange:sliceRange];
+        slice = [_readBuffer subdataWithRange:sliceRange];//截取数据
         
         _readBufferOffset += foundSize;
         
+        //重置_readBufferOffset
         if (_readBufferOffset > 4096 && _readBufferOffset > (_readBuffer.length >> 1)) {
             _readBuffer = [[NSMutableData alloc] initWithBytes:(char *)_readBuffer.bytes + _readBufferOffset length:_readBuffer.length - _readBufferOffset];
             _readBufferOffset = 0;
@@ -1620,7 +1635,7 @@ static const char CRLFCRLFBytes[] = {'\r', '\n', '\r', '\n'};
             }
         } else if (foundSize) {
             [_consumers removeObjectAtIndex:0];
-            consumer.handler(self, slice);
+            consumer.handler(self, slice);//回调到上层,验证服务端握手header
             [_consumerPool returnConsumer:consumer];
             didWork = YES;
         }
@@ -1661,7 +1676,7 @@ static const size_t SRFrameHeaderOverhead = 32;
     }
     
     NSAssert([data isKindOfClass:[NSData class]] || [data isKindOfClass:[NSString class]], @"NSString or NSData");
-    
+    //获取payload len
     size_t payloadLength = [data isKindOfClass:[NSString class]] ? [(NSString *)data lengthOfBytesUsingEncoding:NSUTF8StringEncoding] : [data length];
         
     NSMutableData *frame = [[NSMutableData alloc] initWithLength:payloadLength + SRFrameHeaderOverhead];
@@ -1696,6 +1711,7 @@ static const size_t SRFrameHeaderOverhead = 32;
         return;
     }
     //数据帧头部的Payload len设置
+    //多字节长度量以网络字节顺序表示（译注：应该是指大端序和小端序) EndianU16_BtoN 和 EndianU64_BtoN 处理大小端模式的
     if (payloadLength < 126) { //有效负载数据长度:如果值为0-125字节，那么就表示负载数据的长度
         frame_buffer[1] |= payloadLength;
     } else if (payloadLength <= UINT16_MAX) {
@@ -1747,11 +1763,11 @@ static const size_t SRFrameHeaderOverhead = 32;
 {
     __weak typeof(self) weakSelf = self;
     
-    //  如果是ssl,而且_pinnedCertFound 为NO，而且事件类型是有可读数据未读，或者事件类型是还有空余空间可写
+    //  如果是wss或https,而且_pinnedCertFound 为NO，而且事件类型是有可读数据未读，或者事件类型是还有空余空间可写
     if (_secure && !_pinnedCertFound && (eventCode == NSStreamEventHasBytesAvailable || eventCode == NSStreamEventHasSpaceAvailable)) {
         
         // 本地如果有证书
-        NSArray *sslCerts = [_urlRequest SR_SSLPinnedCertificates]; //
+        NSArray *sslCerts = [_urlRequest SR_SSLPinnedCertificates];
         if (sslCerts) {
             
             // 获取服务端的SSL证书
@@ -1766,7 +1782,7 @@ static const size_t SRFrameHeaderOverhead = 32;
                         SecCertificateRef trustedCert = (__bridge SecCertificateRef)ref;
                         NSData *trustedCertData = CFBridgingRelease(SecCertificateCopyData(trustedCert));
                         
-                        if ([trustedCertData isEqualToData:certData]) {
+                        if ([trustedCertData isEqualToData:certData]) {//证书校验
                             _pinnedCertFound = YES;
                             break;
                         }
@@ -1954,7 +1970,7 @@ static const size_t SRFrameHeaderOverhead = 32;
 
 - (void)returnConsumer:(SRIOConsumer *)consumer;
 {
-    if (_bufferedConsumers.count < _poolSize) {
+    if (_bufferedConsumers.count < _poolSize) { //
         [_bufferedConsumers addObject:consumer];
     }
 }
@@ -2173,9 +2189,9 @@ static NSRunLoop *networkRunLoop = nil;
         
         //runloop循环
         while ([_runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]]) {
-//            NSLog(@"子线程的runloop在监听....");
+            NSLog(@"子线程的runloop在监听....");
         }
-        assert(NO); //来到这里说明,说明runloop退出。不应该来到这里
+//        assert(NO); //来到这里说明,说明runloop退出。不应该来到这里
     }
 }
 

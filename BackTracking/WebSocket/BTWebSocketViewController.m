@@ -20,9 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    NSLog(@"%hu",EndianU16_BtoN(1000)); // e803
-    
+        
     [self addViews];
     [WebSocketManager shared].delegate = self;
 }

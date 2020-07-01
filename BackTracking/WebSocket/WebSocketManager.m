@@ -56,8 +56,9 @@ dispatch_async(dispatch_get_main_queue(), block);\
     
     //创建和设置代理对象
     //ws://121.40.165.18:8800
-    //
-    self.webScoket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://123.207.136.134:9010/ajaxchattest"]];
+    //wss://echo.websocket.org
+    //ws://123.207.136.134:9010/ajaxchattest
+    self.webScoket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"wss://echo.websocket.org"]];
     self.webScoket.delegate = self;
     [self.webScoket open];
 }
