@@ -14,4 +14,19 @@
     
     NSLog(@"调用student的studentTestMethod");
 }
+
+-(void)dealloc {
+
+    NSLog(@"Student释放了----");
+}
+
+//- (BOOL)allowsWeakReference{
+//
+//    return  NO;
+//}
+
+- (BOOL)retainWeakReference{
+
+    return  NO;
+}
 @end

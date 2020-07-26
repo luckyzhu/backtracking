@@ -10,7 +10,6 @@
 		441178E424A10C31003FD7B2 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 441178E324A10C31003FD7B2 /* 123.png */; };
 		44AEFF8B24AC2494005A7E58 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEFF8A24AC2494005A7E58 /* Student.m */; };
 		44AEFF8E24AC2734005A7E58 /* nextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEFF8D24AC2734005A7E58 /* nextViewController.m */; };
-		44AEFF9524AC87F9005A7E58 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEFF9424AC87F9005A7E58 /* NSObject+KVO.m */; };
 		44FFE083249904A5005D9C37 /* tiankongzhicheng.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */; };
 		44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE089249F8377005D9C37 /* SRWebSocket.m */; };
 		44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE08D249F83C4005D9C37 /* WebSocketManager.m */; };
@@ -23,6 +22,10 @@
 		8519F43A249358D100528571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8519F439249358D100528571 /* Assets.xcassets */; };
 		8519F43D249358D100528571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8519F43B249358D100528571 /* LaunchScreen.storyboard */; };
 		8519F440249358D100528571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F43F249358D100528571 /* main.m */; };
+		85B9675724C3472500C0ACF8 /* BTDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B9675624C3472500C0ACF8 /* BTDrawView.m */; };
+		85B9675A24C3476600C0ACF8 /* kline_bonus.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B9675924C3476500C0ACF8 /* kline_bonus.png */; };
+		85C2980524CD6A3C00328FA3 /* NSObject+KVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */; };
+		85C2980624CD6A3C00328FA3 /* SWKVOObserverItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +35,6 @@
 		44AEFF8A24AC2494005A7E58 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		44AEFF8C24AC2734005A7E58 /* nextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nextViewController.h; sourceTree = "<group>"; };
 		44AEFF8D24AC2734005A7E58 /* nextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nextViewController.m; sourceTree = "<group>"; };
-		44AEFF9324AC87F9005A7E58 /* NSObject+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
-		44AEFF9424AC87F9005A7E58 /* NSObject+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
 		44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tiankongzhicheng.mp3; sourceTree = "<group>"; };
 		44FFE089249F8377005D9C37 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		44FFE08A249F8377005D9C37 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
@@ -55,6 +56,13 @@
 		8519F43C249358D100528571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8519F43E249358D100528571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8519F43F249358D100528571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		85B9675524C3472500C0ACF8 /* BTDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrawView.h; sourceTree = "<group>"; };
+		85B9675624C3472500C0ACF8 /* BTDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrawView.m; sourceTree = "<group>"; };
+		85B9675924C3476500C0ACF8 /* kline_bonus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kline_bonus.png; sourceTree = "<group>"; };
+		85C2980124CD6A3C00328FA3 /* SWKVOObserverItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWKVOObserverItem.h; sourceTree = "<group>"; };
+		85C2980224CD6A3C00328FA3 /* NSObject+KVOBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVOBlock.h"; sourceTree = "<group>"; };
+		85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOBlock.m"; sourceTree = "<group>"; };
+		85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKVOObserverItem.m; sourceTree = "<group>"; };
 		E44EC6966CD8D3E7A611FB6B /* libPods-BackTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTracking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,8 +81,7 @@
 		44AEFF8F24AC3081005A7E58 /* KVO */ = {
 			isa = PBXGroup;
 			children = (
-				44AEFF9324AC87F9005A7E58 /* NSObject+KVO.h */,
-				44AEFF9424AC87F9005A7E58 /* NSObject+KVO.m */,
+				85C2980024CD6A2D00328FA3 /* 手动模拟KVO */,
 			);
 			path = KVO;
 			sourceTree = "<group>";
@@ -134,6 +141,8 @@
 		8519F42C249358CC00528571 /* BackTracking */ = {
 			isa = PBXGroup;
 			children = (
+				85B9675824C3476500C0ACF8 /* Sources */,
+				85B9675424C3471700C0ACF8 /* Animation */,
 				44AEFF8F24AC3081005A7E58 /* KVO */,
 				44FFE088249F836A005D9C37 /* WebSocket */,
 				44FFE084249904BD005D9C37 /* Test */,
@@ -151,6 +160,35 @@
 				8519F43F249358D100528571 /* main.m */,
 			);
 			path = BackTracking;
+			sourceTree = "<group>";
+		};
+		85B9675424C3471700C0ACF8 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				85B9675524C3472500C0ACF8 /* BTDrawView.h */,
+				85B9675624C3472500C0ACF8 /* BTDrawView.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		85B9675824C3476500C0ACF8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				85B9675924C3476500C0ACF8 /* kline_bonus.png */,
+			);
+			name = Sources;
+			path = ../../../testOC2/testOC2/Sources;
+			sourceTree = "<group>";
+		};
+		85C2980024CD6A2D00328FA3 /* 手动模拟KVO */ = {
+			isa = PBXGroup;
+			children = (
+				85C2980224CD6A3C00328FA3 /* NSObject+KVOBlock.h */,
+				85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */,
+				85C2980124CD6A3C00328FA3 /* SWKVOObserverItem.h */,
+				85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */,
+			);
+			path = "手动模拟KVO";
 			sourceTree = "<group>";
 		};
 		A55285BD36C7D35B3850E248 /* Pods */ = {
@@ -233,6 +271,7 @@
 				8519F43A249358D100528571 /* Assets.xcassets in Resources */,
 				8519F438249358CC00528571 /* Main.storyboard in Resources */,
 				441178E424A10C31003FD7B2 /* 123.png in Resources */,
+				85B9675A24C3476600C0ACF8 /* kline_bonus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,13 +308,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */,
+				85B9675724C3472500C0ACF8 /* BTDrawView.m in Sources */,
 				44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */,
-				44AEFF9524AC87F9005A7E58 /* NSObject+KVO.m in Sources */,
+				85C2980624CD6A3C00328FA3 /* SWKVOObserverItem.m in Sources */,
 				44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */,
 				44AEFF8E24AC2734005A7E58 /* nextViewController.m in Sources */,
 				44AEFF8B24AC2494005A7E58 /* Student.m in Sources */,
 				8519F435249358CC00528571 /* ViewController.m in Sources */,
 				8519F42F249358CC00528571 /* AppDelegate.m in Sources */,
+				85C2980524CD6A3C00328FA3 /* NSObject+KVOBlock.m in Sources */,
 				8519F440249358D100528571 /* main.m in Sources */,
 				8519F432249358CC00528571 /* SceneDelegate.m in Sources */,
 			);

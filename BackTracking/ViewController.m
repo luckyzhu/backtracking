@@ -10,6 +10,7 @@
 #import <objc/message.h>
 #import <UIKit/UIKit.h>
 #import "nextViewController.h"
+#import "Student.h"
 
 typedef struct {
     BOOL fin;
@@ -27,6 +28,7 @@ typedef struct {
 @property(nonatomic,assign)    int  num;
 @property(nonatomic,copy)    NSString *str;
 @property(nonatomic) long long isVip;
+@property (nonatomic,weak) id obj;
 @end
 
 @implementation ViewController
@@ -48,7 +50,25 @@ typedef struct {
     [button addTarget:self action:@selector(buttonDidClick) forControlEvents:UIControlEventTouchUpInside];
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [self.view addSubview:button];
+
+    [self testCode];
 }
+
+- (void)testCode {
+
+    {
+
+
+        [[[Student alloc]init] studentTestMethod];
+
+    }
+
+
+
+
+}
+
+
 
 - (void)buttonDidClick {
     
