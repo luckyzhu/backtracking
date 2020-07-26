@@ -23,7 +23,6 @@
 		8519F43D249358D100528571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8519F43B249358D100528571 /* LaunchScreen.storyboard */; };
 		8519F440249358D100528571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F43F249358D100528571 /* main.m */; };
 		85B9675724C3472500C0ACF8 /* BTDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B9675624C3472500C0ACF8 /* BTDrawView.m */; };
-		85B9675A24C3476600C0ACF8 /* kline_bonus.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B9675924C3476500C0ACF8 /* kline_bonus.png */; };
 		85C2980524CD6A3C00328FA3 /* NSObject+KVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */; };
 		85C2980624CD6A3C00328FA3 /* SWKVOObserverItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */; };
 /* End PBXBuildFile section */
@@ -58,11 +57,11 @@
 		8519F43F249358D100528571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85B9675524C3472500C0ACF8 /* BTDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrawView.h; sourceTree = "<group>"; };
 		85B9675624C3472500C0ACF8 /* BTDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrawView.m; sourceTree = "<group>"; };
-		85B9675924C3476500C0ACF8 /* kline_bonus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kline_bonus.png; sourceTree = "<group>"; };
 		85C2980124CD6A3C00328FA3 /* SWKVOObserverItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWKVOObserverItem.h; sourceTree = "<group>"; };
 		85C2980224CD6A3C00328FA3 /* NSObject+KVOBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVOBlock.h"; sourceTree = "<group>"; };
 		85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOBlock.m"; sourceTree = "<group>"; };
 		85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKVOObserverItem.m; sourceTree = "<group>"; };
+		85C2980824CD6BCA00328FA3 /* kline_bonus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kline_bonus.png; sourceTree = "<group>"; };
 		E44EC6966CD8D3E7A611FB6B /* libPods-BackTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTracking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,21 +88,23 @@
 		44FFE0812499047E005D9C37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85C2980824CD6BCA00328FA3 /* kline_bonus.png */,
 				441178E324A10C31003FD7B2 /* 123.png */,
 				44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		44FFE084249904BD005D9C37 /* Test */ = {
+		44FFE084249904BD005D9C37 /* TestCode */ = {
 			isa = PBXGroup;
 			children = (
+				85B9675424C3471700C0ACF8 /* Animation */,
 				44AEFF8924AC2494005A7E58 /* Student.h */,
 				44AEFF8A24AC2494005A7E58 /* Student.m */,
 				44AEFF8C24AC2734005A7E58 /* nextViewController.h */,
 				44AEFF8D24AC2734005A7E58 /* nextViewController.m */,
 			);
-			path = Test;
+			path = TestCode;
 			sourceTree = "<group>";
 		};
 		44FFE088249F836A005D9C37 /* WebSocket */ = {
@@ -141,11 +142,8 @@
 		8519F42C249358CC00528571 /* BackTracking */ = {
 			isa = PBXGroup;
 			children = (
-				85B9675824C3476500C0ACF8 /* Sources */,
-				85B9675424C3471700C0ACF8 /* Animation */,
-				44AEFF8F24AC3081005A7E58 /* KVO */,
-				44FFE088249F836A005D9C37 /* WebSocket */,
-				44FFE084249904BD005D9C37 /* Test */,
+				85C2980724CD6B9300328FA3 /* Sum */,
+				44FFE084249904BD005D9C37 /* TestCode */,
 				44FFE0812499047E005D9C37 /* Resources */,
 				8519F42D249358CC00528571 /* AppDelegate.h */,
 				8519F42E249358CC00528571 /* AppDelegate.m */,
@@ -171,15 +169,6 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
-		85B9675824C3476500C0ACF8 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				85B9675924C3476500C0ACF8 /* kline_bonus.png */,
-			);
-			name = Sources;
-			path = ../../../testOC2/testOC2/Sources;
-			sourceTree = "<group>";
-		};
 		85C2980024CD6A2D00328FA3 /* 手动模拟KVO */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +178,15 @@
 				85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */,
 			);
 			path = "手动模拟KVO";
+			sourceTree = "<group>";
+		};
+		85C2980724CD6B9300328FA3 /* Sum */ = {
+			isa = PBXGroup;
+			children = (
+				44FFE088249F836A005D9C37 /* WebSocket */,
+				44AEFF8F24AC3081005A7E58 /* KVO */,
+			);
+			path = Sum;
 			sourceTree = "<group>";
 		};
 		A55285BD36C7D35B3850E248 /* Pods */ = {
@@ -271,7 +269,6 @@
 				8519F43A249358D100528571 /* Assets.xcassets in Resources */,
 				8519F438249358CC00528571 /* Main.storyboard in Resources */,
 				441178E424A10C31003FD7B2 /* 123.png in Resources */,
-				85B9675A24C3476600C0ACF8 /* kline_bonus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
