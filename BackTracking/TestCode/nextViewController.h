@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Student.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface nextViewController : UIViewController
 
+-(instancetype)initWithModel:(Student *)stu;
 @end
 
 NS_ASSUME_NONNULL_END

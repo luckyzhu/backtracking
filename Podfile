@@ -7,5 +7,6 @@ target 'BackTracking' do
   pod 'AFNetworking'
   pod 'SJObserverHelper'
   pod 'KVOController'
-
+  pod 'YYKit'
+  pod 'Masonry'
 end

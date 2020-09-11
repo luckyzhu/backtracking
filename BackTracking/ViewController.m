@@ -11,6 +11,18 @@
 #import <UIKit/UIKit.h>
 #import "nextViewController.h"
 #import "Student.h"
+#import "UIView+Expand.h"
+#import "LXTestObj.h"
+#import "TestView.h"
+#import "ForwarDayModel.h"
+#import "BaseNetWorkModel.h"
+#import "SubStudent.h"
+#import "NSObject+cat.h"
+#import "NSObject+Weak.h"
+#import "NSObject+weakAssociatedPointer.h"
+#import "NSObject+Default.h"
+#import "NSObject+weakTwo.h"
+#import "NSObject+WeakContainer.h"
 
 typedef struct {
     BOOL fin;
@@ -28,52 +40,128 @@ typedef struct {
 @property(nonatomic,assign)    int  num;
 @property(nonatomic,copy)    NSString *str;
 @property(nonatomic) long long isVip;
-@property (nonatomic,weak) id obj;
+@property (nonatomic,weak) UILabel *label;
+@property (nonatomic,weak) UILabel *label2;
+@property (nonatomic,weak) UIView *coverView;
+@property (nonatomic,weak) UIView *coverView2;
+@property (nonatomic,strong) Student *stu;
+@property (nonatomic,strong) ForwarDayModel *forwarddDayModel;
+@property (nonatomic,strong) BaseNetWorkModel *baseModel;
+@property (nonatomic,strong) BaseNetWorkModel *currentModel;
+@property (nonatomic, strong) NSArray *myNumberArr;
+@property (nonatomic, weak) NSObject *obj;
+@property (nonatomic, assign) NSObject *obj2;
+@property (nonatomic, strong) NSThread *thread;
+
 @end
 
 @implementation ViewController
-@synthesize str = _testStr;
+-(NSMutableArray *)data2Array {
+    if (_data2Array == nil) {
+        _data2Array = [NSMutableArray array];
+    }
+    return _data2Array;
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.waitGroup = dispatch_group_create();
 
-    UITableView *tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64)];
-    tableview.delegate = self;
-    tableview.dataSource = self;
-    [self.view addSubview:tableview];
-    
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [button setTitle:@"按钮一" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(buttonDidClick) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    UIButton *button = [[UIButton alloc]init];
+    [button expandWidth:30 leftExpandWidth:30];
+    button.frame = CGRectMake(100, 400, 50, 50);
+    [button setTitle:@"按钮" forState:UIControlStateNormal];
+    button.titleLabel.textColor = [UIColor redColor];
+    button.backgroundColor = [UIColor blueColor];
+    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    button.exclusiveTouch = YES;
     [self.view addSubview:button];
 
-    [self testCode];
 }
 
-- (void)testCode {
+- (void)test {
+    NSLog(@"2");
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
 
-    {
-
-
-        [[[Student alloc]init] studentTestMethod];
-
-    }
-
-
-
-
+    NSLog(@"--observeValueForKeyPath--%@----%@",keyPath,change);
 }
 
+- (id)testBlock{
+
+    __block int val = 10;
+    return  ^{
+        val ++;
+           NSLog(@"--testBlock作为返回值--");
+    };
+}
+
+//- (id)getBlockArray {
+//    int val = 10;
+//    return [[NSArray alloc]initWithObjects:[^{
+//        NSLog(@"11---%ld",val);
+//    } copy], [^{
+//        NSLog(@"11---%ld",val);
+//    } copy],nil];
+//}
 
 
-- (void)buttonDidClick {
-    
-    nextViewController *nextVc = [[nextViewController alloc]init];
+- (void)btnClick {
+
+//    NSLog(@"--buttonDidClick--");
+
+    nextViewController *nextVc = [[nextViewController alloc]initWithModel:self.dataArray.firstObject];
     [self.navigationController pushViewController:nextVc animated:YES];
+
+//    buttton.selected = ! buttton.selected;
+//    if (buttton.selected) {
+//        [UIView animateWithDuration:3.0 animations:^{
+//             self.label.transform = CGAffineTransformIdentity;
+////            self.label.transform = CGAffineTransformConcat( CGAffineTransformMakeScale(0, 0), CGAffineTransformTranslate(self.label.transform, 0, self.label.frame.size.height / 2));
+//            self.label.alpha = 1;
+//        }];
+//    }else{
+//        [UIView animateWithDuration:3.0 animations:^{
+//            self.label.transform = CGAffineTransformMakeScale(1, 1);
+//            self.label.alpha = 1;
+//        }];
+//    }
+
+//
+//    buttton.selected = ! buttton.selected;
+//    if (buttton.selected) {
+//
+//        [UIView animateWithDuration:5.0 animations:^{
+//            CGRect frame = self.label.frame;
+//            frame.origin.x = 200;
+//            self.label.frame = frame;
+//
+////            self.label2.frame = CGRectMake(0, 0, 0, 30);
+//
+//        }];
+//
+////        [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+////            self.coverView.frame = CGRectMake(0, 0, 100, 0);
+////        } completion:^(BOOL finished) {
+////
+////        }];
+//    }else{
+//        [UIView animateWithDuration:5.0 animations:^{
+//            CGRect frame = self.label.frame;
+//            frame.origin.x = 0;
+//            self.label.frame = frame;
+//
+////            self.label.frame = CGRectMake(0, 0, 100, 30);
+////            self.label2.frame = CGRectMake(0, 0, 100, 30);
+//        }];
+//        [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//            self.coverView.frame = CGRectMake(0, 0, 100, 30);
+//        } completion:^(BOOL finished) {
+//
+//        }];
+//    }
+
 }
 
 

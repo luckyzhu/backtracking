@@ -15,6 +15,7 @@
 		44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE08D249F83C4005D9C37 /* WebSocketManager.m */; };
 		44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */; };
 		6C8D6B6B51E22BC9846672AD /* libPods-BackTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E44EC6966CD8D3E7A611FB6B /* libPods-BackTracking.a */; };
+		851576DD24EE1EDB00446DE6 /* UIView+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = 851576DC24EE1EDB00446DE6 /* UIView+Expand.m */; };
 		8519F42F249358CC00528571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F42E249358CC00528571 /* AppDelegate.m */; };
 		8519F432249358CC00528571 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F431249358CC00528571 /* SceneDelegate.m */; };
 		8519F435249358CC00528571 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F434249358CC00528571 /* ViewController.m */; };
@@ -22,6 +23,23 @@
 		8519F43A249358D100528571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8519F439249358D100528571 /* Assets.xcassets */; };
 		8519F43D249358D100528571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8519F43B249358D100528571 /* LaunchScreen.storyboard */; };
 		8519F440249358D100528571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F43F249358D100528571 /* main.m */; };
+		852D16242500992800B84F87 /* NSObject+Weak.m in Sources */ = {isa = PBXBuildFile; fileRef = 852D16232500992800B84F87 /* NSObject+Weak.m */; };
+		852D162725009A8600B84F87 /* NSObject+weakAssociatedPointer.m in Sources */ = {isa = PBXBuildFile; fileRef = 852D162625009A8600B84F87 /* NSObject+weakAssociatedPointer.m */; };
+		852D162B2500CEBD00B84F87 /* NSObject+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = 852D162A2500CEBD00B84F87 /* NSObject+Default.m */; };
+		852D162E2502215300B84F87 /* WeakAssociatedObjectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 852D162D2502215300B84F87 /* WeakAssociatedObjectWrapper.m */; };
+		852D1634250221AA00B84F87 /* NSObject+weakTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 852D1633250221AA00B84F87 /* NSObject+weakTwo.m */; };
+		85898B0D24F413C9001E690C /* LXTestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 85898B0C24F413C9001E690C /* LXTestObj.m */; };
+		859321F424FF7B750035C7DD /* NSObject+cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 859321F324FF7B750035C7DD /* NSObject+cat.m */; };
+		85A392FB24F7A4E50022E8CC /* SubStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A392FA24F7A4E50022E8CC /* SubStudent.m */; };
+		85A392FF24F7AD5E0022E8CC /* PaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A392FE24F7AD5E0022E8CC /* PaintViewController.m */; };
+		85A3930224F7AD730022E8CC /* PaintButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A3930124F7AD730022E8CC /* PaintButtonsView.m */; };
+		85A3930524F7AD850022E8CC /* PaintDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A3930424F7AD850022E8CC /* PaintDrawView.m */; };
+		85A3930A24F8E4710022E8CC /* DesignCanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A3930924F8E4710022E8CC /* DesignCanvasViewController.m */; };
+		85A45192250224C4000AB70B /* NSObject+WeakContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A45191250224C4000AB70B /* NSObject+WeakContainer.m */; };
+		85A4519525023ACF000AB70B /* WeakSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4519425023ACF000AB70B /* WeakSingleton.m */; };
+		85AFE17524F611A5000651B6 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE17424F611A5000651B6 /* TestView.m */; };
+		85AFE17824F639F0000651B6 /* BaseNetWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE17724F639F0000651B6 /* BaseNetWorkModel.m */; };
+		85AFE17C24F63A89000651B6 /* ForwarDayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE17B24F63A89000651B6 /* ForwarDayModel.m */; };
 		85B9675724C3472500C0ACF8 /* BTDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B9675624C3472500C0ACF8 /* BTDrawView.m */; };
 		85C2980524CD6A3C00328FA3 /* NSObject+KVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */; };
 		85C2980624CD6A3C00328FA3 /* SWKVOObserverItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */; };
@@ -43,6 +61,8 @@
 		44FFE090249F83DF005D9C37 /* BTWebSocketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTWebSocketViewController.h; sourceTree = "<group>"; };
 		44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTWebSocketViewController.m; sourceTree = "<group>"; };
 		6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.debug.xcconfig"; path = "Target Support Files/Pods-BackTracking/Pods-BackTracking.debug.xcconfig"; sourceTree = "<group>"; };
+		851576DB24EE1EDB00446DE6 /* UIView+Expand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Expand.h"; sourceTree = "<group>"; };
+		851576DC24EE1EDB00446DE6 /* UIView+Expand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Expand.m"; sourceTree = "<group>"; };
 		8519F42A249358CC00528571 /* BackTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8519F42D249358CC00528571 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8519F42E249358CC00528571 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,6 +75,40 @@
 		8519F43C249358D100528571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8519F43E249358D100528571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8519F43F249358D100528571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		852D16222500992800B84F87 /* NSObject+Weak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Weak.h"; sourceTree = "<group>"; };
+		852D16232500992800B84F87 /* NSObject+Weak.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Weak.m"; sourceTree = "<group>"; };
+		852D162525009A8600B84F87 /* NSObject+weakAssociatedPointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+weakAssociatedPointer.h"; sourceTree = "<group>"; };
+		852D162625009A8600B84F87 /* NSObject+weakAssociatedPointer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+weakAssociatedPointer.m"; sourceTree = "<group>"; };
+		852D16292500CEBD00B84F87 /* NSObject+Default.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Default.h"; sourceTree = "<group>"; };
+		852D162A2500CEBD00B84F87 /* NSObject+Default.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Default.m"; sourceTree = "<group>"; };
+		852D162C2502215300B84F87 /* WeakAssociatedObjectWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakAssociatedObjectWrapper.h; sourceTree = "<group>"; };
+		852D162D2502215300B84F87 /* WeakAssociatedObjectWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakAssociatedObjectWrapper.m; sourceTree = "<group>"; };
+		852D1632250221AA00B84F87 /* NSObject+weakTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+weakTwo.h"; sourceTree = "<group>"; };
+		852D1633250221AA00B84F87 /* NSObject+weakTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+weakTwo.m"; sourceTree = "<group>"; };
+		85898B0B24F413C9001E690C /* LXTestObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTestObj.h; sourceTree = "<group>"; };
+		85898B0C24F413C9001E690C /* LXTestObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTestObj.m; sourceTree = "<group>"; };
+		859321F224FF7B750035C7DD /* NSObject+cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+cat.h"; sourceTree = "<group>"; };
+		859321F324FF7B750035C7DD /* NSObject+cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+cat.m"; sourceTree = "<group>"; };
+		85A392F924F7A4E50022E8CC /* SubStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubStudent.h; sourceTree = "<group>"; };
+		85A392FA24F7A4E50022E8CC /* SubStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubStudent.m; sourceTree = "<group>"; };
+		85A392FD24F7AD5E0022E8CC /* PaintViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintViewController.h; sourceTree = "<group>"; };
+		85A392FE24F7AD5E0022E8CC /* PaintViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintViewController.m; sourceTree = "<group>"; };
+		85A3930024F7AD730022E8CC /* PaintButtonsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintButtonsView.h; sourceTree = "<group>"; };
+		85A3930124F7AD730022E8CC /* PaintButtonsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintButtonsView.m; sourceTree = "<group>"; };
+		85A3930324F7AD850022E8CC /* PaintDrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintDrawView.h; sourceTree = "<group>"; };
+		85A3930424F7AD850022E8CC /* PaintDrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintDrawView.m; sourceTree = "<group>"; };
+		85A3930824F8E4710022E8CC /* DesignCanvasViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignCanvasViewController.h; sourceTree = "<group>"; };
+		85A3930924F8E4710022E8CC /* DesignCanvasViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignCanvasViewController.m; sourceTree = "<group>"; };
+		85A45190250224C4000AB70B /* NSObject+WeakContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+WeakContainer.h"; sourceTree = "<group>"; };
+		85A45191250224C4000AB70B /* NSObject+WeakContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WeakContainer.m"; sourceTree = "<group>"; };
+		85A4519325023ACF000AB70B /* WeakSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakSingleton.h; sourceTree = "<group>"; };
+		85A4519425023ACF000AB70B /* WeakSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakSingleton.m; sourceTree = "<group>"; };
+		85AFE17324F611A5000651B6 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		85AFE17424F611A5000651B6 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		85AFE17624F639F0000651B6 /* BaseNetWorkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNetWorkModel.h; sourceTree = "<group>"; };
+		85AFE17724F639F0000651B6 /* BaseNetWorkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNetWorkModel.m; sourceTree = "<group>"; };
+		85AFE17A24F63A89000651B6 /* ForwarDayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForwarDayModel.h; sourceTree = "<group>"; };
+		85AFE17B24F63A89000651B6 /* ForwarDayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwarDayModel.m; sourceTree = "<group>"; };
 		85B9675524C3472500C0ACF8 /* BTDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrawView.h; sourceTree = "<group>"; };
 		85B9675624C3472500C0ACF8 /* BTDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrawView.m; sourceTree = "<group>"; };
 		85C2980124CD6A3C00328FA3 /* SWKVOObserverItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWKVOObserverItem.h; sourceTree = "<group>"; };
@@ -88,6 +142,7 @@
 		44FFE0812499047E005D9C37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85AFE17924F639F8000651B6 /* NetWork */,
 				85C2980824CD6BCA00328FA3 /* kline_bonus.png */,
 				441178E324A10C31003FD7B2 /* 123.png */,
 				44FFE082249904A5005D9C37 /* tiankongzhicheng.mp3 */,
@@ -98,11 +153,26 @@
 		44FFE084249904BD005D9C37 /* TestCode */ = {
 			isa = PBXGroup;
 			children = (
+				85A392FC24F7AD1B0022E8CC /* Draw */,
 				85B9675424C3471700C0ACF8 /* Animation */,
 				44AEFF8924AC2494005A7E58 /* Student.h */,
 				44AEFF8A24AC2494005A7E58 /* Student.m */,
+				859321F224FF7B750035C7DD /* NSObject+cat.h */,
+				859321F324FF7B750035C7DD /* NSObject+cat.m */,
+				852D16222500992800B84F87 /* NSObject+Weak.h */,
+				852D16232500992800B84F87 /* NSObject+Weak.m */,
+				85A392F924F7A4E50022E8CC /* SubStudent.h */,
+				85A392FA24F7A4E50022E8CC /* SubStudent.m */,
+				852D16292500CEBD00B84F87 /* NSObject+Default.h */,
+				852D162A2500CEBD00B84F87 /* NSObject+Default.m */,
+				85AFE17324F611A5000651B6 /* TestView.h */,
+				85AFE17424F611A5000651B6 /* TestView.m */,
 				44AEFF8C24AC2734005A7E58 /* nextViewController.h */,
 				44AEFF8D24AC2734005A7E58 /* nextViewController.m */,
+				851576DB24EE1EDB00446DE6 /* UIView+Expand.h */,
+				851576DC24EE1EDB00446DE6 /* UIView+Expand.m */,
+				85898B0B24F413C9001E690C /* LXTestObj.h */,
+				85898B0C24F413C9001E690C /* LXTestObj.m */,
 			);
 			path = TestCode;
 			sourceTree = "<group>";
@@ -160,6 +230,72 @@
 			path = BackTracking;
 			sourceTree = "<group>";
 		};
+		852D162825009C1200B84F87 /* 关联对象 */ = {
+			isa = PBXGroup;
+			children = (
+				852D162525009A8600B84F87 /* NSObject+weakAssociatedPointer.h */,
+				852D162625009A8600B84F87 /* NSObject+weakAssociatedPointer.m */,
+				852D162C2502215300B84F87 /* WeakAssociatedObjectWrapper.h */,
+				852D162D2502215300B84F87 /* WeakAssociatedObjectWrapper.m */,
+				852D1632250221AA00B84F87 /* NSObject+weakTwo.h */,
+				852D1633250221AA00B84F87 /* NSObject+weakTwo.m */,
+				85A45190250224C4000AB70B /* NSObject+WeakContainer.h */,
+				85A45191250224C4000AB70B /* NSObject+WeakContainer.m */,
+				85A4519325023ACF000AB70B /* WeakSingleton.h */,
+				85A4519425023ACF000AB70B /* WeakSingleton.m */,
+			);
+			path = "关联对象";
+			sourceTree = "<group>";
+		};
+		859883F5250B2BC300E8352A /* 弱单例对象 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "弱单例对象";
+			sourceTree = "<group>";
+		};
+		85A392FC24F7AD1B0022E8CC /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				85A3930724F7B80D0022E8CC /* Design */,
+				85A3930624F7B7FB0022E8CC /* Normal */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		85A3930624F7B7FB0022E8CC /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				85A392FD24F7AD5E0022E8CC /* PaintViewController.h */,
+				85A392FE24F7AD5E0022E8CC /* PaintViewController.m */,
+				85A3930024F7AD730022E8CC /* PaintButtonsView.h */,
+				85A3930124F7AD730022E8CC /* PaintButtonsView.m */,
+				85A3930324F7AD850022E8CC /* PaintDrawView.h */,
+				85A3930424F7AD850022E8CC /* PaintDrawView.m */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		85A3930724F7B80D0022E8CC /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				85A3930824F8E4710022E8CC /* DesignCanvasViewController.h */,
+				85A3930924F8E4710022E8CC /* DesignCanvasViewController.m */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		85AFE17924F639F8000651B6 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				85AFE17624F639F0000651B6 /* BaseNetWorkModel.h */,
+				85AFE17724F639F0000651B6 /* BaseNetWorkModel.m */,
+				85AFE17A24F63A89000651B6 /* ForwarDayModel.h */,
+				85AFE17B24F63A89000651B6 /* ForwarDayModel.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		85B9675424C3471700C0ACF8 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +319,8 @@
 		85C2980724CD6B9300328FA3 /* Sum */ = {
 			isa = PBXGroup;
 			children = (
+				859883F5250B2BC300E8352A /* 弱单例对象 */,
+				852D162825009C1200B84F87 /* 关联对象 */,
 				44FFE088249F836A005D9C37 /* WebSocket */,
 				44AEFF8F24AC3081005A7E58 /* KVO */,
 			);
@@ -304,17 +442,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				852D162E2502215300B84F87 /* WeakAssociatedObjectWrapper.m in Sources */,
+				85AFE17C24F63A89000651B6 /* ForwarDayModel.m in Sources */,
 				44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */,
+				85898B0D24F413C9001E690C /* LXTestObj.m in Sources */,
 				85B9675724C3472500C0ACF8 /* BTDrawView.m in Sources */,
+				85A4519525023ACF000AB70B /* WeakSingleton.m in Sources */,
 				44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */,
 				85C2980624CD6A3C00328FA3 /* SWKVOObserverItem.m in Sources */,
 				44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */,
+				85A45192250224C4000AB70B /* NSObject+WeakContainer.m in Sources */,
 				44AEFF8E24AC2734005A7E58 /* nextViewController.m in Sources */,
+				85A3930A24F8E4710022E8CC /* DesignCanvasViewController.m in Sources */,
+				85AFE17524F611A5000651B6 /* TestView.m in Sources */,
+				852D162725009A8600B84F87 /* NSObject+weakAssociatedPointer.m in Sources */,
 				44AEFF8B24AC2494005A7E58 /* Student.m in Sources */,
 				8519F435249358CC00528571 /* ViewController.m in Sources */,
 				8519F42F249358CC00528571 /* AppDelegate.m in Sources */,
+				852D16242500992800B84F87 /* NSObject+Weak.m in Sources */,
+				85A3930524F7AD850022E8CC /* PaintDrawView.m in Sources */,
+				85A392FF24F7AD5E0022E8CC /* PaintViewController.m in Sources */,
+				852D1634250221AA00B84F87 /* NSObject+weakTwo.m in Sources */,
+				859321F424FF7B750035C7DD /* NSObject+cat.m in Sources */,
 				85C2980524CD6A3C00328FA3 /* NSObject+KVOBlock.m in Sources */,
+				85AFE17824F639F0000651B6 /* BaseNetWorkModel.m in Sources */,
+				85A3930224F7AD730022E8CC /* PaintButtonsView.m in Sources */,
+				85A392FB24F7A4E50022E8CC /* SubStudent.m in Sources */,
 				8519F440249358D100528571 /* main.m in Sources */,
+				852D162B2500CEBD00B84F87 /* NSObject+Default.m in Sources */,
+				851576DD24EE1EDB00446DE6 /* UIView+Expand.m in Sources */,
 				8519F432249358CC00528571 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

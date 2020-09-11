@@ -25,8 +25,16 @@
 //    return  NO;
 //}
 
-- (BOOL)retainWeakReference{
+//+(BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
+//{
+//    return NO;
+//}
 
-    return  NO;
+- (void)eat{
+    NSLog(@"Student的eat方法----%@",self.name);
+}
+
+- (void)run {
+    NSLog(@"Student的run方法----");
 }
 @end

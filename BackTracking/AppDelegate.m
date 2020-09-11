@@ -6,14 +6,23 @@
 //  Copyright © 2020 newboy. All rights reserved.
 //
 
+
+
 #import "AppDelegate.h"
+#import "PaintViewController.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
 
+- (NSComparisonResult)compareValue:(CGFloat )valueA andString:(CGFloat )valueB {
+    //先转成3位
+    NSString *aStr = [NSString stringWithFormat:@"%.3f",valueA];
+    NSString *bStr = [NSString stringWithFormat:@"%.3f",valueB];
+    NSComparisonResult result = [aStr compare:bStr options:NSNumericSearch];
+    return result;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
