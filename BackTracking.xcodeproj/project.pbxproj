@@ -14,7 +14,6 @@
 		44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE089249F8377005D9C37 /* SRWebSocket.m */; };
 		44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE08D249F83C4005D9C37 /* WebSocketManager.m */; };
 		44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */; };
-		6C8D6B6B51E22BC9846672AD /* libPods-BackTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E44EC6966CD8D3E7A611FB6B /* libPods-BackTracking.a */; };
 		851576DD24EE1EDB00446DE6 /* UIView+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = 851576DC24EE1EDB00446DE6 /* UIView+Expand.m */; };
 		8519F42F249358CC00528571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F42E249358CC00528571 /* AppDelegate.m */; };
 		8519F432249358CC00528571 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F431249358CC00528571 /* SceneDelegate.m */; };
@@ -43,10 +42,12 @@
 		85B9675724C3472500C0ACF8 /* BTDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B9675624C3472500C0ACF8 /* BTDrawView.m */; };
 		85C2980524CD6A3C00328FA3 /* NSObject+KVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */; };
 		85C2980624CD6A3C00328FA3 /* SWKVOObserverItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */; };
+		E5DCD77F870C3410205D8845 /* Pods_BackTracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AB194DA06ED9F0A80C8199 /* Pods_BackTracking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.release.xcconfig"; path = "Target Support Files/Pods-BackTracking/Pods-BackTracking.release.xcconfig"; sourceTree = "<group>"; };
+		19AB194DA06ED9F0A80C8199 /* Pods_BackTracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441178E324A10C31003FD7B2 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		44AEFF8924AC2494005A7E58 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		44AEFF8A24AC2494005A7E58 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
@@ -116,7 +117,7 @@
 		85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOBlock.m"; sourceTree = "<group>"; };
 		85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKVOObserverItem.m; sourceTree = "<group>"; };
 		85C2980824CD6BCA00328FA3 /* kline_bonus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kline_bonus.png; sourceTree = "<group>"; };
-		E44EC6966CD8D3E7A611FB6B /* libPods-BackTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTracking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF2E555109ABF4286384C1A4 /* Pods-BackTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTracking/Pods-BackTracking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C8D6B6B51E22BC9846672AD /* libPods-BackTracking.a in Frameworks */,
+				E5DCD77F870C3410205D8845 /* Pods_BackTracking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +333,7 @@
 			children = (
 				6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */,
 				10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */,
+				FF2E555109ABF4286384C1A4 /* Pods-BackTracking.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -339,7 +341,7 @@
 		E9A383C01C6139AAA576C63B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E44EC6966CD8D3E7A611FB6B /* libPods-BackTracking.a */,
+				19AB194DA06ED9F0A80C8199 /* Pods_BackTracking.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -355,6 +357,8 @@
 				8519F426249358CC00528571 /* Sources */,
 				8519F427249358CC00528571 /* Frameworks */,
 				8519F428249358CC00528571 /* Resources */,
+				7EEE37F713E7221975FF2E62 /* [CP] Embed Pods Frameworks */,
+				654E17FA8793A4D6D2299E30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -413,6 +417,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		654E17FA8793A4D6D2299E30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackTracking/Pods-BackTracking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EEE37F713E7221975FF2E62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackTracking/Pods-BackTracking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FB11F3CD23159584D7FDE90F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,7 +474,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -499,6 +541,7 @@
 /* Begin XCBuildConfiguration section */
 		8519F441249358D100528571 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -557,6 +600,7 @@
 		};
 		8519F442249358D100528571 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -609,7 +653,6 @@
 		};
 		8519F444249358D100528571 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,7 +669,7 @@
 		};
 		8519F445249358D100528571 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */;
+			baseConfigurationReference = FF2E555109ABF4286384C1A4 /* Pods-BackTracking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
