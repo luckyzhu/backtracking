@@ -14,6 +14,7 @@
 		44FFE08B249F8377005D9C37 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE089249F8377005D9C37 /* SRWebSocket.m */; };
 		44FFE08F249F83C4005D9C37 /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE08D249F83C4005D9C37 /* WebSocketManager.m */; };
 		44FFE092249F83DF005D9C37 /* BTWebSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */; };
+		4B75022626453606002868C2 /* YogaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B75022526453606002868C2 /* YogaViewController.m */; };
 		851576DD24EE1EDB00446DE6 /* UIView+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = 851576DC24EE1EDB00446DE6 /* UIView+Expand.m */; };
 		8519F42F249358CC00528571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F42E249358CC00528571 /* AppDelegate.m */; };
 		8519F432249358CC00528571 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8519F431249358CC00528571 /* SceneDelegate.m */; };
@@ -61,6 +62,8 @@
 		44FFE08E249F83C4005D9C37 /* WebSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
 		44FFE090249F83DF005D9C37 /* BTWebSocketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTWebSocketViewController.h; sourceTree = "<group>"; };
 		44FFE091249F83DF005D9C37 /* BTWebSocketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTWebSocketViewController.m; sourceTree = "<group>"; };
+		4B75022426453606002868C2 /* YogaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaViewController.h; sourceTree = "<group>"; };
+		4B75022526453606002868C2 /* YogaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaViewController.m; sourceTree = "<group>"; };
 		6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.debug.xcconfig"; path = "Target Support Files/Pods-BackTracking/Pods-BackTracking.debug.xcconfig"; sourceTree = "<group>"; };
 		851576DB24EE1EDB00446DE6 /* UIView+Expand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Expand.h"; sourceTree = "<group>"; };
 		851576DC24EE1EDB00446DE6 /* UIView+Expand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Expand.m"; sourceTree = "<group>"; };
@@ -192,6 +195,15 @@
 			path = WebSocket;
 			sourceTree = "<group>";
 		};
+		4B75022226453565002868C2 /* Yoga */ = {
+			isa = PBXGroup;
+			children = (
+				4B75022426453606002868C2 /* YogaViewController.h */,
+				4B75022526453606002868C2 /* YogaViewController.m */,
+			);
+			path = Yoga;
+			sourceTree = "<group>";
+		};
 		8519F421249358CC00528571 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +225,7 @@
 		8519F42C249358CC00528571 /* BackTracking */ = {
 			isa = PBXGroup;
 			children = (
+				4B75022226453565002868C2 /* Yoga */,
 				85C2980724CD6B9300328FA3 /* Sum */,
 				44FFE084249904BD005D9C37 /* TestCode */,
 				44FFE0812499047E005D9C37 /* Resources */,
@@ -506,6 +519,7 @@
 				85A392FF24F7AD5E0022E8CC /* PaintViewController.m in Sources */,
 				852D1634250221AA00B84F87 /* NSObject+weakTwo.m in Sources */,
 				859321F424FF7B750035C7DD /* NSObject+cat.m in Sources */,
+				4B75022626453606002868C2 /* YogaViewController.m in Sources */,
 				85C2980524CD6A3C00328FA3 /* NSObject+KVOBlock.m in Sources */,
 				85AFE17824F639F0000651B6 /* BaseNetWorkModel.m in Sources */,
 				85A3930224F7AD730022E8CC /* PaintButtonsView.m in Sources */,
