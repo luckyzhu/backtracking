@@ -67,7 +67,7 @@ typedef struct {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    NSLog(@"测试git amend ----- 1111111");
     
 }
 
