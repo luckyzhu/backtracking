@@ -66,18 +66,9 @@ typedef struct {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
-    UIButton *button = [[UIButton alloc]init];
-    [button expandWidth:30 leftExpandWidth:30];
-    button.frame = CGRectMake(100, 400, 50, 50);
-    [button setTitle:@"按钮" forState:UIControlStateNormal];
-    button.titleLabel.textColor = [UIColor redColor];
-    button.backgroundColor = [UIColor blueColor];
-    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    button.exclusiveTouch = YES;
-    [self.view addSubview:button];
-
+    
+    
+    
 }
 
 - (void)test {
@@ -224,6 +215,25 @@ typedef struct {
     
     
     NSLog(@"1111----%@",frame_header.array);
+}
+
+- (void)testCode
+{
+    // Do any additional setup after loading the view.
+    NSTimeInterval date = [[NSDate date] timeIntervalSince1970];
+    sleep(2.3934848);
+    UIButton *button = [[UIButton alloc]init];
+    [button expandWidth:30 leftExpandWidth:30];
+    button.frame = CGRectMake(100, 400, 50, 50);
+    [button setTitle:@"按钮" forState:UIControlStateNormal];
+    button.titleLabel.textColor = [UIColor redColor];
+    button.backgroundColor = [UIColor blueColor];
+    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    button.exclusiveTouch = YES;
+    [self.view addSubview:button];
+
+    NSTimeInterval date2 = [[NSDate date] timeIntervalSince1970];
+    NSLog(@"1111----%@",[NSNumber numberWithDouble:round(date2 - date)]);
 }
 
 

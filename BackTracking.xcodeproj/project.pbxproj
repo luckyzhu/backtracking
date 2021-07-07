@@ -261,13 +261,6 @@
 			path = "关联对象";
 			sourceTree = "<group>";
 		};
-		859883F5250B2BC300E8352A /* 弱单例对象 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "弱单例对象";
-			sourceTree = "<group>";
-		};
 		85A392FC24F7AD1B0022E8CC /* Draw */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,7 +326,6 @@
 		85C2980724CD6B9300328FA3 /* Sum */ = {
 			isa = PBXGroup;
 			children = (
-				859883F5250B2BC300E8352A /* 弱单例对象 */,
 				852D162825009C1200B84F87 /* 关联对象 */,
 				44FFE088249F836A005D9C37 /* WebSocket */,
 				44AEFF8F24AC3081005A7E58 /* KVO */,
