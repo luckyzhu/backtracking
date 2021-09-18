@@ -52,5 +52,12 @@
 
 }
 
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    NSLog(@"layoutSubviews-----");
+}
+
 
 @end

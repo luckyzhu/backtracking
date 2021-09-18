@@ -15,7 +15,7 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize window = _window;
 - (NSComparisonResult)compareValue:(CGFloat )valueA andString:(CGFloat )valueB {
     //先转成3位
     NSString *aStr = [NSString stringWithFormat:@"%.3f",valueA];

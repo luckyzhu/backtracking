@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^testBlcok)(void);
 
 @interface ViewController : UIViewController
 @property (nonatomic,strong) NSMutableArray *dataArray;

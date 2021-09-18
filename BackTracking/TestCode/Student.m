@@ -30,11 +30,16 @@
 //    return NO;
 //}
 
-- (void)eat{
-    NSLog(@"Student的eat方法----%@",self.name);
-}
+//- (void)eat{
+//    NSLog(@"Student的eat方法----%@",self.name);
+//}
 
 - (void)run {
     NSLog(@"Student的run方法----");
+}
+
+- (void)test123
+{
+    NSLog(@"test123----");
 }
 @end

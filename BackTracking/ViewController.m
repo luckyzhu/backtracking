@@ -23,7 +23,10 @@
 #import "NSObject+Default.h"
 #import "NSObject+weakTwo.h"
 #import "NSObject+WeakContainer.h"
+#import "nextViewController.h"
 
+#import <objc/runtime.h>
+#import <malloc/malloc.h>
 typedef struct {
     BOOL fin;
     size_t age;
@@ -32,7 +35,7 @@ typedef struct {
     NSArray *array;
 } frame_header;
 
-@interface ViewController ()<NSStreamDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()<NSStreamDelegate,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)     NSMutableData *data;
 @property(nonatomic,strong)    NSOutputStream *outPutSteam;
 @property(nonatomic,strong)     NSInputStream *inPutSteam;
@@ -52,6 +55,8 @@ typedef struct {
 @property (nonatomic, weak) NSObject *obj;
 @property (nonatomic, assign) NSObject *obj2;
 @property (nonatomic, strong) NSThread *thread;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIView *testView;
 
 @end
 
@@ -67,9 +72,99 @@ typedef struct {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"测试git amend ----- 8888888");
+    
+    NSMutableDictionary *debugLog = [NSMutableDictionary dictionaryWithDictionary:nil];
+
+    
+    
+    Student *p = [[Student alloc] init];
+    NSLog(@"%zd %zd", class_getInstanceSize([Student class]), // 16
+                  malloc_size((__bridge const void *)(p))); // 16
+
+    
+    NSLog(@"viewDidLoad");
+    self.view.backgroundColor = [UIColor yellowColor];
+    
+    TestView *testView = [[TestView alloc]init];
+    testView.backgroundColor = [UIColor redColor];
+    testView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
+    [self.view addSubview:testView];
+    self.testView = testView;
+
+    UIButton *button = [[UIButton alloc]init];
+    button.frame = CGRectMake(100, 400, 50, 50);
+    [button setTitle:@"按钮" forState:UIControlStateNormal];
+    button.titleLabel.textColor = [UIColor blueColor];
+    button.backgroundColor = [UIColor greenColor];
+    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
 }
+
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear");
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear");
+}
+
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    NSLog(@"viewWillLayoutSubviews");
+}
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    NSLog(@"viewDidLayoutSubviews");
+}
+
+#pragma mark -collectionview 数据源方法
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
+    return 6;   //返回section数
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return 3;  //每个section的Item数
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //创建item / 从缓存池中拿 Item
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MAINCOLLECTIONVIEWID" forIndexPath:indexPath];
+    CGFloat red = (arc4random() % 255 ) / 255.0;
+    CGFloat green = (arc4random() % 255 ) / 255.0;
+    CGFloat blue = (arc4random() % 255 ) / 255.0;
+
+    cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    // 外界在此给Item添加模型数据
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];//取消选中
+     
+    NSLog(@"点击l...");
+    INT16_MAX;
+    [self.collectionView setContentOffset:CGPointMake(0, INT64_MAX+1) animated:YES];
+    
+//    NSArray *array = @[@"1",@"2"];
+//
+//
+//    int a = 1000;
+//    NSLog(@"点击2...array---%@",array[a]);
+    
+ }
 
 - (void)test {
     NSLog(@"2");
@@ -98,61 +193,20 @@ typedef struct {
 //}
 
 
-- (void)btnClick {
-
-//    NSLog(@"--buttonDidClick--");
-
-    nextViewController *nextVc = [[nextViewController alloc]initWithModel:self.dataArray.firstObject];
-    [self.navigationController pushViewController:nextVc animated:YES];
-
-//    buttton.selected = ! buttton.selected;
-//    if (buttton.selected) {
-//        [UIView animateWithDuration:3.0 animations:^{
-//             self.label.transform = CGAffineTransformIdentity;
-////            self.label.transform = CGAffineTransformConcat( CGAffineTransformMakeScale(0, 0), CGAffineTransformTranslate(self.label.transform, 0, self.label.frame.size.height / 2));
-//            self.label.alpha = 1;
-//        }];
-//    }else{
-//        [UIView animateWithDuration:3.0 animations:^{
-//            self.label.transform = CGAffineTransformMakeScale(1, 1);
-//            self.label.alpha = 1;
-//        }];
-//    }
-
-//
-//    buttton.selected = ! buttton.selected;
-//    if (buttton.selected) {
-//
-//        [UIView animateWithDuration:5.0 animations:^{
-//            CGRect frame = self.label.frame;
-//            frame.origin.x = 200;
-//            self.label.frame = frame;
-//
-////            self.label2.frame = CGRectMake(0, 0, 0, 30);
-//
-//        }];
-//
-////        [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-////            self.coverView.frame = CGRectMake(0, 0, 100, 0);
-////        } completion:^(BOOL finished) {
-////
-////        }];
-//    }else{
-//        [UIView animateWithDuration:5.0 animations:^{
-//            CGRect frame = self.label.frame;
-//            frame.origin.x = 0;
-//            self.label.frame = frame;
-//
-////            self.label.frame = CGRectMake(0, 0, 100, 30);
-////            self.label2.frame = CGRectMake(0, 0, 100, 30);
-//        }];
-//        [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//            self.coverView.frame = CGRectMake(0, 0, 100, 30);
-//        } completion:^(BOOL finished) {
-//
-//        }];
-//    }
-
+- (void)btnClick{
+    
+//    CGRect frame = self.testView.frame;
+//    frame.size.height -= 10;
+//    self.testView.frame = frame;
+        
+//    [self.testView setNeedsLayout];
+    // viewWillLayoutSubviews 和 viewDidLayoutSubviews触发时机
+    //1.改变子控件的宽度会触发
+    //2.改变子控件的高度会触发
+    //3.改变子控件的x和y不会触发
+    
+    nextViewController *vc = [[nextViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -222,15 +276,7 @@ typedef struct {
     // Do any additional setup after loading the view.
     NSTimeInterval date = [[NSDate date] timeIntervalSince1970];
     sleep(2.3934848);
-    UIButton *button = [[UIButton alloc]init];
-    [button expandWidth:30 leftExpandWidth:30];
-    button.frame = CGRectMake(100, 400, 50, 50);
-    [button setTitle:@"按钮" forState:UIControlStateNormal];
-    button.titleLabel.textColor = [UIColor redColor];
-    button.backgroundColor = [UIColor blueColor];
-    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    button.exclusiveTouch = YES;
-    [self.view addSubview:button];
+    
 
     NSTimeInterval date2 = [[NSDate date] timeIntervalSince1970];
     NSLog(@"1111----%@",[NSNumber numberWithDouble:round(date2 - date)]);

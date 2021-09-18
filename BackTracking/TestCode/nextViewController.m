@@ -47,8 +47,8 @@ typedef void(^TestBlock)(void);
     [stu addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:@"fulei"];
     [sub addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:@"zilei"];
 
-    stu.text = @"111";
-    sub.text = @"222";
+//    stu.text = @"111";
+//    sub.text = @"222";
 
 //
 //    Student *stu = [[Student alloc]init];
@@ -78,7 +78,21 @@ typedef void(^TestBlock)(void);
 
 //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(test) userInfo:nil repeats:YES];
 //    self.timer = timer;
+    
+    
+    [self testBlockWithBlock:^{
+        NSLog(@"1111111-------");
+        [self test];
+    }];
 
+}
+
+// typedef void (^testBlcok)(void);
+- (void)testBlockWithBlock:(void(^)(void))testBlcok
+{
+    NSLog(@"33333333-------");
+    
+    testBlcok();
 }
 
 - (void)test{
@@ -90,7 +104,7 @@ typedef void(^TestBlock)(void);
     ViewController *vc = (ViewController *)self.navigationController.viewControllers.firstObject;
     [vc.dataArray removeAllObjects];
     vc.dataArray = nil;
-    NSLog(@"self.stu2.name111----%@",self.stu2.name);
+//    NSLog(@"self.stu2.name111----%@",self.stu2.name);
     NSLog(@"--btnClick--");
 
 }
