@@ -118,7 +118,7 @@
 		85C2980324CD6A3C00328FA3 /* NSObject+KVOBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOBlock.m"; sourceTree = "<group>"; };
 		85C2980424CD6A3C00328FA3 /* SWKVOObserverItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKVOObserverItem.m; sourceTree = "<group>"; };
 		85C2980824CD6BCA00328FA3 /* kline_bonus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kline_bonus.png; sourceTree = "<group>"; };
-		FF2E555109ABF4286384C1A4 /* Pods-BackTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTracking/Pods-BackTracking.release.xcconfig"; sourceTree = "<group>"; };
+		CA5DC03E655F96DC526415EA /* Pods-BackTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTracking/Pods-BackTracking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,7 +343,7 @@
 			children = (
 				6E8FF4A8C528E037358CF2E2 /* Pods-BackTracking.debug.xcconfig */,
 				10D530B297DEAC283B8FBB1F /* Pods-BackTracking.release.xcconfig */,
-				FF2E555109ABF4286384C1A4 /* Pods-BackTracking.release.xcconfig */,
+				CA5DC03E655F96DC526415EA /* Pods-BackTracking.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -682,7 +682,7 @@
 		};
 		8519F445249358D100528571 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF2E555109ABF4286384C1A4 /* Pods-BackTracking.release.xcconfig */;
+			baseConfigurationReference = CA5DC03E655F96DC526415EA /* Pods-BackTracking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - KVOController (1.2.0)
   - Masonry (1.1.0)
   - SJObserverHelper (1.1.1)
@@ -26,6 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - FMDB
   - KVOController
   - Masonry
   - SJObserverHelper
@@ -34,6 +38,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SJObserverHelper: 3d82ad55a108a139a81dc8d0a36a898bdd2a5a22
@@ -41,6 +46,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c2e7bd67fe429cd4b6b89610e3bc4213b4ad0f71
+PODFILE CHECKSUM: 5c5a785f47a800fc2b1c26f86e19540bc97e1a17
 
 COCOAPODS: 1.1.1
