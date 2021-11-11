@@ -89,9 +89,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/KVOController/KVOController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SJObserverHelper/SJObserverHelper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TMAnimatedTextView/TMAnimatedTextView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TTTAttributedLabel/TTTAttributedLabel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YYKit/YYKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Yoga/yoga.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YogaKit/YogaKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/lottie-ios/Lottie.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
@@ -99,7 +102,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/KVOController/KVOController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SJObserverHelper/SJObserverHelper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TMAnimatedTextView/TMAnimatedTextView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TTTAttributedLabel/TTTAttributedLabel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YYKit/YYKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Yoga/yoga.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YogaKit/YogaKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/lottie-ios/Lottie.framework"
 fi

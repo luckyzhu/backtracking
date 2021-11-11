@@ -1,0 +1,6 @@
+framework module TMAnimatedTextView {
+  umbrella header "TMAnimatedTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}

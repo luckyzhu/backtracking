@@ -24,7 +24,8 @@
 #import "NSObject+weakTwo.h"
 #import "NSObject+WeakContainer.h"
 #import "nextViewController.h"
-
+#import "YYKit.h"
+#import "NSArray+svideo.h"
 #import <objc/runtime.h>
 #import <malloc/malloc.h>
 typedef struct {
@@ -35,7 +36,7 @@ typedef struct {
     NSArray *array;
 } frame_header;
 
-@interface ViewController ()<NSStreamDelegate,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface ViewController ()<NSStreamDelegate,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,TestViewDelegate>
 @property(nonatomic,strong)     NSMutableData *data;
 @property(nonatomic,strong)    NSOutputStream *outPutSteam;
 @property(nonatomic,strong)     NSInputStream *inPutSteam;
@@ -72,35 +73,47 @@ typedef struct {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    NSString *tmpStr = @"测试后面有没有图片测试后面有没有图片测试后面有没有图片测试后面有没有图片测试后面有没有图片测试后面有没有图片有没有图片有没有图片有没有图片有没有图片123";
+//    UILabel *label = [[UILabel alloc]init];
+//    label.attributedText = [self getMutableAttributedString:tmpStr andatIndex:0 andImage:[UIImage imageNamed:@"kline_bonus"] andFrame:CGRectMake(0, 0, 15, 15)];
+//    //获取整个富文本的size(高宽)
+////    CGSize size = [label.attributedText boundingRectWithSize:CGSizeMake(self.view.frame.size.width - 16, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
+//    CGRect textOfRect = [label textRectForBounds:CGRectMake(0, 0, self.view.frame.size.width - 16, CGFLOAT_MAX) limitedToNumberOfLines:2];
+//    label.frame = CGRectMake(8, 100, self.view.frame.size.width - 16, textOfRect.size.height);
+//    label.backgroundColor = [UIColor blueColor];
+////    label.numberOfLines = 2;
+//    [self.view addSubview:label];
     
-    NSMutableDictionary *debugLog = [NSMutableDictionary dictionaryWithDictionary:nil];
-
-    
-    
-    Student *p = [[Student alloc] init];
-    NSLog(@"%zd %zd", class_getInstanceSize([Student class]), // 16
-                  malloc_size((__bridge const void *)(p))); // 16
-
-    
-    NSLog(@"viewDidLoad");
-    self.view.backgroundColor = [UIColor yellowColor];
-    
-    TestView *testView = [[TestView alloc]init];
-    testView.backgroundColor = [UIColor redColor];
-    testView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
-    [self.view addSubview:testView];
-    self.testView = testView;
-
-    UIButton *button = [[UIButton alloc]init];
-    button.frame = CGRectMake(100, 400, 50, 50);
-    [button setTitle:@"按钮" forState:UIControlStateNormal];
-    button.titleLabel.textColor = [UIColor blueColor];
-    button.backgroundColor = [UIColor greenColor];
-    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    
+    NSString *str = @"mid:4691556873801036|oid:1034:4691556041687062|uid:2163991301|from:10BB093010|oid:1034:4691556041687062|mid:4691556873801036|auth_uid:7575030448|vote_oid:1022:2317162021_1856991_-_fc348e|scene:vvs";
+    NSArray *finalArray = [[str componentsSeparatedByString:@"|"] uniqueMembers];
+    NSLog(@"111----%@",finalArray);
 }
 
+
+- (NSMutableAttributedString *)getMutableAttributedString:(NSString *)attri andatIndex:(NSInteger)Index  andImage:(UIImage *)attchImage andFrame:(CGRect)frame{
+     NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc] initWithString:attri];
+    //插入图片
+    NSTextAttachment *attchString = [[NSTextAttachment alloc] init];
+    attchString.image = attchImage;
+    NSAttributedString *string = [NSAttributedString attributedStringWithAttachment:attchString];
+    attchString.bounds = frame;
+    [attriString insertAttributedString:string atIndex:Index];
+
+   //设置行高，字间距，字体大小等属性
+    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
+    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paraStyle.alignment = NSTextAlignmentLeft;
+    paraStyle.lineSpacing = 2;
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:14.0f],NSParagraphStyleAttributeName:paraStyle,NSKernAttributeName:@1.5f };
+    [attriString addAttributes:dic range:NSMakeRange(0, attri.length)];
+    return attriString;
+}
+
+
+- (void)test1
+{
+    NSLog(@"代理方法1----");
+}
 
 
 -(void)viewWillAppear:(BOOL)animated

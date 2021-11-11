@@ -11,4 +11,7 @@ target 'BackTracking' do
   pod 'Masonry'
   pod 'YogaKit'
   pod 'FMDB'
+  pod 'lottie-ios'
+  pod 'TTTAttributedLabel'
+  pod 'TMAnimatedTextView'
 end

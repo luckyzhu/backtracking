@@ -18,6 +18,9 @@
 //        coverView.frame = CGRectMake(50,50, 20, 20);
 //        [self  addSubview:coverView];
         self.coverView = coverView;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick)];
+        [self addGestureRecognizer:tap];
     }
     return self;
 }
@@ -59,5 +62,13 @@
     NSLog(@"layoutSubviews-----");
 }
 
+- (void)tapClick
+{
+    NSLog(@"tapClick-----");
+    
+    if ([self.delegate respondsToSelector:@selector(test1)]) {
+        [self.delegate test1];
+    }
+}
 
 @end

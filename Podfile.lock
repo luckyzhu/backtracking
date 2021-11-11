@@ -18,8 +18,11 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - KVOController (1.2.0)
+  - lottie-ios (3.2.2)
   - Masonry (1.1.0)
   - SJObserverHelper (1.1.1)
+  - TMAnimatedTextView (1.0.0)
+  - TTTAttributedLabel (2.0.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -31,8 +34,11 @@ DEPENDENCIES:
   - AFNetworking
   - FMDB
   - KVOController
+  - lottie-ios
   - Masonry
   - SJObserverHelper
+  - TMAnimatedTextView
+  - TTTAttributedLabel
   - YogaKit
   - YYKit
 
@@ -40,12 +46,15 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  lottie-ios: a033bb989eea77d9f99cc4e2bbdd3788229761ad
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SJObserverHelper: 3d82ad55a108a139a81dc8d0a36a898bdd2a5a22
+  TMAnimatedTextView: 77e56ec41ccde90915c0c6744d5af07660d8c82f
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 5c5a785f47a800fc2b1c26f86e19540bc97e1a17
+PODFILE CHECKSUM: 3afeaa6edad2503817623691869f9f05182cbb11
 
 COCOAPODS: 1.1.1
